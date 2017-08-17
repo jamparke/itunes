@@ -8,10 +8,15 @@ angular.module('itunes').service('itunesService', function($http, $q){
   //You can return the http request or you can make your own promise in order to manipulate the data before you resolve it.
 
     //Code here
-    
 
-
-
+    this.getArtistInfo = function(artist){
+      // console.log('called!');
+      var info = [];
+      return $http.jsonp('https://itunes.apple.com/search?term+' + artist + '&callback=JSON_CALLBACK')
+        .then(function(res){
+          return res.data.
+        })
+    }
 
     // Go to the next step in the README (Tie in your controller). You will come back to these instructions shortly.
     // 
